@@ -2,6 +2,7 @@
 
 PLACED_DIRECTORY="/home/ivysola/nextclond_backup/borg/"
 MOUNTPOINT="/yadisk/nx_backups/"
+MOUNTPOINT_DRIVE="/yadisk"
 ARCHIVE_NAME="nx_cloud.backup.zip"
 TEMP_FOLDER="/tmp/nxcloud_backup_transit/"
 
@@ -25,7 +26,7 @@ if [ -z "$(ls -A "$PLACED_DIRECTORY/")" ]; then
     exit 1
 fi
 
-if ! grep -q "$MOUNTPOINT" /etc/fstab; then
+if ! grep -q "$MOUNTPOINT_DRIVE" /etc/fstab; then
     echo "Could not find the mountpoint in the fstab file. Did you add it there?"
     exit 1
 fi
