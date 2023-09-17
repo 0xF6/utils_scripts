@@ -55,7 +55,7 @@ echo "Success create zip archive."
 chmod 664 "${TEMP_FOLDER}${ARCHIVE_NAME}"
 echo "Success fixed pex on zip archive."
 cp -rf "${TEMP_FOLDER}${ARCHIVE_NAME}" $MOUNTPOINT
-echo "Success fixed pex on zip archive."
+echo "Success copy backup to yandex disk."
 rm "${TEMP_FOLDER}${ARCHIVE_NAME}"
 
 rm "$PLACED_DIRECTORY/aio-lockfile"
