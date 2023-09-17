@@ -48,7 +48,7 @@ if ! [ -d "$TEMP_FOLDER" ]; then
 fi
 
 
-cp $PLACED_DIRECTORY $TEMP_FOLDER
+cp -r $PLACED_DIRECTORY $TEMP_FOLDER
 echo "Success copy backup to temp."
 zip -r "${TEMP_FOLDER}${ARCHIVE_NAME}"
 echo "Success create zip archive."
