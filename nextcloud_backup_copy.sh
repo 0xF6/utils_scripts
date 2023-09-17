@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PLACED_DIRECTORY="/home/nextclond_backup/borg/"
+PLACED_DIRECTORY="/home/ivysola/nextclond_backup/borg/"
 MOUNTPOINT="/yadisk/nx_backups/"
 ARCHIVE_NAME="nx_cloud.backup.zip"
 TEMP_FOLDER="/tmp/nxcloud_backup_transit/"
@@ -48,12 +48,12 @@ fi
 
 
 
-zip -r "${TEMP_FOLDER}${PLACED_DIRECTORY}"
+zip -r "${TEMP_FOLDER}${ARCHIVE_NAME}"
 echo "Success create zip archive."
-chmod 664 "${TEMP_FOLDER}${PLACED_DIRECTORY}"
+chmod 664 "${TEMP_FOLDER}${ARCHIVE_NAME}"
 echo "Success fixed pex on zip archive."
-cp -rf "${TEMP_FOLDER}${PLACED_DIRECTORY}" $MOUNTPOINT
+cp -rf "${TEMP_FOLDER}${ARCHIVE_NAME}" $MOUNTPOINT
 echo "Success fixed pex on zip archive."
-rm "${TEMP_FOLDER}${PLACED_DIRECTORY}"
+rm "${TEMP_FOLDER}${ARCHIVE_NAME}"
 
 rm "$PLACED_DIRECTORY/aio-lockfile"
