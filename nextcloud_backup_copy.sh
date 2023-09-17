@@ -48,9 +48,9 @@ if ! [ -d "$TEMP_FOLDER" ]; then
 fi
 
 
-cp -r $PLACED_DIRECTORY $TEMP_FOLDER
+cp -r $PLACED_DIRECTORY "${TEMP_FOLDER}backup"
 echo "Success copy backup to temp."
-zip -r "${TEMP_FOLDER}${ARCHIVE_NAME}"
+zip -r $TEMP_FOLDER$ARCHIVE_NAME "${TEMP_FOLDER}backup" -0
 echo "Success create zip archive."
 chmod 664 "${TEMP_FOLDER}${ARCHIVE_NAME}"
 echo "Success fixed pex on zip archive."
